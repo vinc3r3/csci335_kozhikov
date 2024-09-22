@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc fibonacci_generator.v --exe fibonacci_generator_tb.cpp --top-module fibonacci_generator"
+S   7892640    20515  1725359492   425302418  1598506306           0 "/usr/bin/verilator_bin"
+S       861 73183493944842694  1725877186   515349600  1725877186   515349600 "fibonacci_generator.v"
+T      5141 68116944364071977  1725877210   217332000  1725877210   217332000 "obj_dir/Vfibonacci_generator.cpp"
+T      3106 32369622321815693  1725877210   201281500  1725877210   201281500 "obj_dir/Vfibonacci_generator.h"
+T      1885 3096224744422632  1725877210   232978800  1725877210   232978800 "obj_dir/Vfibonacci_generator.mk"
+T      2245 82472168176313250  1725877210   201281500  1725877210   201281500 "obj_dir/Vfibonacci_generator__Slow.cpp"
+T       609 30962247438216559  1725877210   185662200  1725877210   185662200 "obj_dir/Vfibonacci_generator__Syms.cpp"
+T       879 79094468455776811  1725877210   185662200  1725877210   185662200 "obj_dir/Vfibonacci_generator__Syms.h"
+T       359 2814749767711981  1725877210   232978800  1725877210   232978800 "obj_dir/Vfibonacci_generator__ver.d"
+T         0        0  1725877210   295474500  1725877210   295474500 "obj_dir/Vfibonacci_generator__verFiles.dat"
+T      1602 2814749767711973  1725877210   217332000  1725877210   217332000 "obj_dir/Vfibonacci_generator_classes.mk"
