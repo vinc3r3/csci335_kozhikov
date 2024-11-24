@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--assert -I./rtl --Wall --cc ./rtl/register.v --exe ./test/register/register_tb.cpp ./emulator/BittyEmulator.cpp ./bitty_dpi.cpp"
+S   7892640    20515  1725359492   425302418  1598506306           0 "/usr/bin/verilator_bin"
+T      4389 12103423998928297  1732464889   903720400  1732464889   903720400 "obj_dir/Vregister.cpp"
+T      2758 16044073672877424  1732464889   889651900  1732464889   889651900 "obj_dir/Vregister.h"
+T      2076 21392098230571586  1732464889   914326900  1732464889   914326900 "obj_dir/Vregister.mk"
+T      1876 10414574138664334  1732464889   892750800  1732464889   892750800 "obj_dir/Vregister__Slow.cpp"
+T       554 10977524091989258  1732464889   875479100  1732464889   875479100 "obj_dir/Vregister__Syms.cpp"
+T       802 8725724278304088  1732464889   881991500  1732464889   881991500 "obj_dir/Vregister__Syms.h"
+T       264 9007199255302725  1732464889   938906500  1732464889   938906500 "obj_dir/Vregister__ver.d"
+T         0        0  1732464890    10146800  1732464890    10146800 "obj_dir/Vregister__verFiles.dat"
+T      1558 10696049115566528  1732464889   907274900  1732464889   907274900 "obj_dir/Vregister_classes.mk"
+S       410 3096224744401817  1732382850   464688100  1732382850   464688100 "rtl/register.v"

@@ -7,7 +7,7 @@ module memory (
     reg [15:0] my_memory [0:255]; // since 2^addr = 2^8 = 256
 
     initial begin
-        $readmemh("./instructions.txt", my_memory);
+        $readmemh("./fibonacci.txt", my_memory);
     end
 
     always @(posedge clk) begin 

@@ -344,14 +344,13 @@ void Vcore::_initial__TOP__4(Vcore__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vcore::_initial__TOP__4\n"); );
     Vcore* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    WData/*159:0*/ __Vtemp1[5];
+    WData/*127:0*/ __Vtemp1[4];
     // Body
     __Vtemp1[0U] = 0x2e747874U;
-    __Vtemp1[1U] = 0x696f6e73U;
-    __Vtemp1[2U] = 0x72756374U;
-    __Vtemp1[3U] = 0x696e7374U;
-    __Vtemp1[4U] = 0x2e2fU;
-    VL_READMEM_N(true, 16, 256, 0, VL_CVT_PACK_STR_NW(5, __Vtemp1)
+    __Vtemp1[1U] = 0x61636369U;
+    __Vtemp1[2U] = 0x69626f6eU;
+    __Vtemp1[3U] = 0x2e2f66U;
+    VL_READMEM_N(true, 16, 256, 0, VL_CVT_PACK_STR_NW(4, __Vtemp1)
                  , vlTOPp->core__DOT__ifu_inst__DOT__Memory__DOT__my_memory
                  , 0, ~0ULL);
 }

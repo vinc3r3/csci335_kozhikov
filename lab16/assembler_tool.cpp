@@ -5,6 +5,16 @@ using namespace std;
 class MachineInstruction {
 public:
     int rx, ry, alu_sel;
+    int immd, branch_operator;
+
+    uint16_t branchToBinary() const {
+        return (immd << 4) | (branch_operator);
+    }
+
+    void branchFromBinary(uint16_t binary) {
+        immd = binary >> 4;
+        branch_operator = binary & 0xF;
+    }
 
     uint16_t toBinary() const {
         return (rx << 13) | (ry << 10) | (alu_sel << 2);
@@ -25,9 +35,9 @@ private:
 public:
     OpcodeTranslator() {
         mnemonicToBinary = {{"add", 0b000}, {"sub", 0b001}, {"and", 0b010}, {"or", 0b011}, {"xor", 0b100},
-                            {"shl", 0b101}, {"shr", 0b110}, {"cmp", 0b111}};
+                            {"shl", 0b101}, {"shr", 0b110}, {"cmp", 0b111}, {"bie", 0b0010}, {"big", 0b0110}, {"bil", 0b1010}};
         binaryToMnemonic = {{0b000, "add"}, {0b001, "sub"}, {0b010, "and"}, {0b011, "or"}, {0b100, "xor"},
-                            {0b101, "shl"}, {0b110, "shr"}, {0b111, "cmp"}};
+                            {0b101, "shl"}, {0b110, "shr"}, {0b111, "cmp"}, {0b0010, "bie"}, {0b0110, "big"}, {0b1010, "bil"}};
     }
 
     int getBinaryCode(const string& mnemonic) {
@@ -56,20 +66,35 @@ public:
         string line;
         while (getline(input, line)) {
             istringstream lineStream(line);
-            string operation, regX, regY;
+            if (line[0] == 'b' && line[1] == 'i') {
+                string operation, imd;
+                lineStream >> operation >> imd;
 
-            lineStream >> operation >> regX >> regY;
+                int imd_value = stoi(imd.substr(1));
 
-            int operandX = stoi(regX.substr(1));
-            int operandY = stoi(regY.substr(1));
+                MachineInstruction instruction;
+                instruction.immd = imd_value;
+                instruction.branch_operator = translator.getBinaryCode(operation);
 
-            MachineInstruction instruction;
-            instruction.rx = operandX;
-            instruction.ry = operandY;
-            instruction.alu_sel = translator.getBinaryCode(operation);
+                uint16_t machineCode = instruction.branchToBinary();
+                output << bitset<16>(machineCode) << endl;    
+            }
+            else {
+                string operation, regX, regY;
 
-            uint16_t machineCode = instruction.toBinary();
-            output << bitset<16>(machineCode) << endl;
+                lineStream >> operation >> regX >> regY;
+
+                int operandX = stoi(regX.substr(1));
+                int operandY = stoi(regY.substr(1));
+
+                MachineInstruction instruction;
+                instruction.rx = operandX;
+                instruction.ry = operandY;
+                instruction.alu_sel = translator.getBinaryCode(operation);
+
+                uint16_t machineCode = instruction.toBinary();
+                output << bitset<16>(machineCode) << endl;
+            }
         }
 
         input.close();
@@ -105,11 +130,20 @@ public:
 
         uint16_t machineCode;
         while (input.read(reinterpret_cast<char*>(&machineCode), sizeof(machineCode))) {
-            MachineInstruction instruction;
-            instruction.fromBinary(machineCode);
+            if (machineCode % 16 == 2 || machineCode % 16 == 6 || machineCode % 16 == 10) {
+                MachineInstruction instruction;
+                instruction.branchFromBinary(machineCode);
 
-            string operation = translator.getMnemonic(instruction.alu_sel);
-            output << operation << " r" << instruction.rx << ", r" << instruction.ry << endl;
+                string operation = translator.getMnemonic(instruction.branch_operator);
+                output << operation << " #" << instruction.immd << endl;
+            }
+            else {
+                MachineInstruction instruction;
+                instruction.fromBinary(machineCode);
+
+                string operation = translator.getMnemonic(instruction.alu_sel);
+                output << operation << " r" << instruction.rx << " r" << instruction.ry << endl;
+            }
         }
 
         input.close();

@@ -5,10 +5,10 @@
 BittyEmulator::BittyEmulator() {
     // std::cout << "Bitty Emulator Constructor" << std::endl;
 
-    registers_ = {0x1234, 0x1234, 0x1234, 0x1234, 0x1234, 0x1234, 0x1234, 0x1234};
+    registers_ = {0x0001, 0x0001, 0x0001, 0x0001, 0x0001, 0x0001, 0x0001, 0x0001};
     
 
-    std::ifstream istrm("./instructions.txt");
+    std::ifstream istrm("./fibonacci.txt");
 
     for (uint16_t instruction; istrm >> std::hex >> instruction;) {
         memory.push_back(instruction);

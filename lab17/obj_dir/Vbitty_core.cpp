@@ -71,56 +71,56 @@ VL_INLINE_OPT void Vbitty_core::_sequent__TOP__1(Vbitty_core__Syms* __restrict v
     Vbitty_core* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg7 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg7 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_7) {
             vlTOPp->bitty_core__DOT__reg7 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg6 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg6 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_6) {
             vlTOPp->bitty_core__DOT__reg6 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg5 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg5 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_5) {
             vlTOPp->bitty_core__DOT__reg5 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg4 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg4 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_4) {
             vlTOPp->bitty_core__DOT__reg4 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg3 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg3 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_3) {
             vlTOPp->bitty_core__DOT__reg3 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg2 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg2 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_2) {
             vlTOPp->bitty_core__DOT__reg2 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg1 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg1 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_1) {
             vlTOPp->bitty_core__DOT__reg1 = vlTOPp->bitty_core__DOT__outs;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__reg0 = 0x1234U;
+        vlTOPp->bitty_core__DOT__reg0 = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_0) {
             vlTOPp->bitty_core__DOT__reg0 = vlTOPp->bitty_core__DOT__outs;
@@ -129,7 +129,7 @@ VL_INLINE_OPT void Vbitty_core::_sequent__TOP__1(Vbitty_core__Syms* __restrict v
     vlTOPp->bitty_core__DOT__Control__DOT__current_state 
         = ((IData)(vlTOPp->rst) ? 1U : (IData)(vlTOPp->bitty_core__DOT__Control__DOT__next_state));
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__outs = 0x1234U;
+        vlTOPp->bitty_core__DOT__outs = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_c) {
             vlTOPp->bitty_core__DOT__outs = (0xffffU 
@@ -319,14 +319,14 @@ VL_INLINE_OPT void Vbitty_core::_sequent__TOP__5(Vbitty_core__Syms* __restrict v
     Vbitty_core* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__to_ina = 0x1234U;
+        vlTOPp->bitty_core__DOT__to_ina = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_s) {
             vlTOPp->bitty_core__DOT__to_ina = vlTOPp->bitty_core__DOT__mux_out;
         }
     }
     if (vlTOPp->rst) {
-        vlTOPp->bitty_core__DOT__to_control = 0x1234U;
+        vlTOPp->bitty_core__DOT__to_control = 1U;
     } else {
         if (vlTOPp->bitty_core__DOT__en_i) {
             vlTOPp->bitty_core__DOT__to_control = vlTOPp->instr;

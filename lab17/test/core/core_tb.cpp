@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
 
     // Simulation variables
     vluint64_t sim_time = 0;  // Simulation time in ticks
-    const vluint64_t max_sim_time = 1000; // Maximum simulation time
+    const vluint64_t max_sim_time = 300; // Maximum simulation time
     int clk = 0;             // Clock signal
 
     // Inputs to the core module
